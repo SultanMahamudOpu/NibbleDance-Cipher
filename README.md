@@ -1,4 +1,4 @@
-# 🔐 NibbleDance Cipher
+# NibbleDance Cipher – A Novel Lightweight Cryptographic Algorithm
 
 ## 📄 Table of Contents
 
@@ -18,10 +18,7 @@
 
 ## 📘 Overview
 
-**NibbleDance Cipher** is a lightweight symmetric encryption algorithm based on:
-- Nibble-wise (4-bit) rotation
-- Prime number-based key generation
-- Bitwise XOR operations
+**NibbleDance Cipher** is a lightweight symmetric key cryptographic algorithm that operates on the nibbles (4-bit halves) of ASCII characters. It employs bit-level transformations such as circular rotations and bitwise XOR, along with a dynamically generated prime number key. The algorithm is designed for simplicity and efficiency, making it well-suited for resource-constrained systems or educational cryptographic applications.
 
 This cipher is named **"NibbleDance"** due to the way it rotates and shifts 4-bit nibbles, creating a "dance" of bits that enhances diffusion and complexity in the ciphertext.
 
