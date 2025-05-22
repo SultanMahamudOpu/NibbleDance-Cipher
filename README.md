@@ -9,6 +9,14 @@ Okay, let's structure a full report for your algorithm, now named the "NibbleDan
 
 ---
 
+You are absolutely right! My apologies. The Markdown for a Table of Contents that links to sections typically requires HTML anchors or a specific Markdown extension that might not be rendered by all platforms directly in the text block.
+
+Let's correct that. For a plain text Table of Contents (which will work universally but won't have clickable links in all viewers), it's just a numbered list. If you want clickable links, you often need to manually create HTML anchors or use a Markdown processor that supports automatic ToC generation.
+
+Here's the **plain text version** that will definitely "work" in terms of display:
+
+---
+
 ### Table of Contents
 
 1.  **Overview of the NibbleDance Cipher**
@@ -35,6 +43,72 @@ Okay, let's structure a full report for your algorithm, now named the "NibbleDan
     5.2. Limitations
 6.  **Conclusion**
 7.  **References**
+8.  **Appendix A: Python Source Code**
+
+---
+
+**To make it clickable in many Markdown environments (like GitHub, some IDEs, etc.):**
+
+You would define anchors for your headings and then link to them.
+
+**Example of defining anchors (HTML within Markdown):**
+
+```markdown
+## <a name="introduction"></a>2. Introduction
+### <a name="purpose-of-cryptography"></a>2.1. Purpose of Cryptography
+```
+
+**And then the Table of Contents would link to them:**
+
+```markdown
+### Table of Contents
+
+1.  [Overview of the NibbleDance Cipher](#overview)
+2.  [Introduction](#introduction)
+    2.1. [Purpose of Cryptography](#purpose-of-cryptography)
+    2.2. [Introducing the NibbleDance Cipher](#introducing-the-nibbledance-cipher)
+... and so on
+```
+
+**Alternatively, many Markdown renderers automatically generate IDs for headers based on the header text.**
+For example, a header like `## 2. Introduction` might get an automatic ID like `#2-introduction`.
+A header like `### 2.1. Purpose of Cryptography` might get `#21-purpose-of-cryptography`.
+
+So, your ToC could look like this, relying on auto-generated IDs (you'd need to check how your specific Markdown viewer/processor generates them):
+
+```markdown
+### Table of Contents
+
+1.  [Overview of the NibbleDance Cipher](#1-overview-of-the-nibbledance-cipher)
+2.  [Introduction](#2-introduction)
+    2.1. [Purpose of Cryptography](#21-purpose-of-cryptography)
+    2.2. [Introducing the NibbleDance Cipher](#22-introducing-the-nibbledance-cipher)
+3.  [The NibbleDance Cipher Algorithm](#3-the-nibbledance-cipher-algorithm)
+    3.1. [Key Components](#31-key-components)
+    3.2. [Encryption Process](#32-encryption-process)
+        3.2.1. [Pseudocode for Encryption](#321-pseudocode-for-encryption)
+        3.2.2. [Flowchart for Encryption](#322-flowchart-for-encryption)
+    3.3. [Decryption Process](#33-decryption-process)
+        3.3.1. [Pseudocode for Decryption](#331-pseudocode-for-decryption)
+        3.3.2. [Flowchart for Decryption](#332-flowchart-for-decryption)
+4.  [Experimental Validation and Test Cases](#4-experimental-validation-and-test-cases)
+    4.1. [Test Case 1: "Hello"](#41-test-case-1-hello)
+        4.1.1. [Encryption of "Hello"](#411-encryption-of-hello)
+        4.1.2. [Decryption of Ciphertext from "Hello"](#412-decryption-of-ciphertext-from-hello)
+    4.2. [Test Case 2: "Cipher!"](#42-test-case-2-cipher)
+        4.2.1. [Encryption of "Cipher!"](#421-encryption-of-cipher)
+        4.2.2. [Decryption of Ciphertext from "Cipher!"](#422-decryption-of-ciphertext-from-cipher)
+5.  [Benefits and Limitations](#5-benefits-and-limitations)
+    5.1. [Benefits](#51-benefits)
+    5.2. [Limitations](#52-limitations)
+6.  [Conclusion](#6-conclusion)
+7.  [References](#7-references)
+8.  [Appendix A: Python Source Code](#appendix-a-python-source-code)
+```
+
+For your assignment report, if you're submitting it as plain text or in a basic editor, the first non-clickable version is perfectly fine and standard. If you're using a Markdown-aware platform, the second version (relying on auto-generated IDs) is usually the way to go.
+
+I'll use the plain, non-clickable list style in future full report generations if not specified, as it's the most universally compatible. Thanks for pointing out the ambiguity!
 **Appendix A: Python Source Code**
 
 ---
