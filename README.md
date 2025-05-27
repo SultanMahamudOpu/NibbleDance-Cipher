@@ -229,6 +229,7 @@ encrypted_alphanumeric_string = "".join(encrypted_alphanumeric_string_chars)
 
 
 print(f"Plaintext: {plaintext}")
+print(f"Ciphertext (integer list with embedded key): {encrypted_int_list}")
 print(f"Ciphertext: {encrypted_alphanumeric_string}")
 print(f"Decrypted: {decrypted}")
 
