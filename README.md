@@ -76,7 +76,7 @@ Original Plaintext: `Sultan321`
 | 1 | 49 | 3 | 1 | 12 | 2 | 194 | 81 | 81 |
 
 **Ciphertext**: `[211, 193, 57, 69, 59, 89, 92, 77, 79, 81]`  
-**EncryptedText**: `5CphhrgSKT` 
+**EncryptedText**: `5CphhrgSKT`
 **Decrypted Text**: `Sultan321`
 
 ### 🔹 Example 2: Encrypting & Decrypting "Hello@332"
@@ -99,7 +99,7 @@ Original Plaintext: `Hello@332`
 | 2 | 50 | 3 | 2 | 12 | 4 | 196 | 71 | 71 |
 
 **Ciphertext**: `[131, 147, 25, 21, 21, 20, 147, 69, 69, 71]`  
-**EncryptedText**: `xfgiimhHHL` 
+**EncryptedText**: `xfgiimhHHL`
 **Decrypted Text**: `Hello@332`
 
 ## ✅ Benefits of NibbleDance Cipher
