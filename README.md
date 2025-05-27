@@ -75,6 +75,30 @@ Steps:
    - Merge and XOR the result with `p`.
 5. Return ciphertext as a list of integers, prefixed with the key `p`.
 
+---
+## 🔄 Encryption Flowchart
+
+```mermaid
+flowchart TD
+    Start(["Start Encryption"]) --> InputPlaintext[/"Input Plaintext"/]
+    InputPlaintext --> GeneratePrime["Generate random prime number between 2 and 250"]
+    GeneratePrime --> ExtractPrimeBits["Extract upper 4 bits and lower 4 bits of the prime"]
+    ExtractPrimeBits --> ComputeRotations["Compute rotation values of upper and lower bits"]
+    ComputeRotations --> InitCiphertext["Initialize ciphertext list with prime as first element"]
+    InitCiphertext --> ForEachChar{"For each character in plaintext"}
+    ForEachChar --> GetASCII["Get ASCII value of character"]
+    GetASCII --> SplitNibbles["Split ASCII into upper and lower 4 bits"]
+    SplitNibbles --> RotateNibbles["Rotate upper 4 bits left by r_upper, lower 4 bits left by r_lower"]
+    RotateNibbles --> CombineBits["Combine rotated nibbles into 8-bit value"]
+    CombineBits --> XORWithPrime["XOR combined value with prime"]
+    XORWithPrime --> AppendToCiphertext["Append result to ciphertext list"]
+    AppendToCiphertext --> EndForEachChar["Repeat for next character"]
+    EndForEachChar -- More characters --> ForEachChar
+    EndForEachChar -- All done --> OutputCiphertext["Return ciphertext list"]
+    OutputCiphertext --> End(["End Encryption"])
+
+```
+
 ## 🔓 Decryption Process
 Steps:
 1. Extract the prime key `p` from the first element.
@@ -84,6 +108,37 @@ Steps:
    - Split into upper and lower nibbles.
    - Rotate them right by `r_upper` and `r_lower`.
    - Reconstruct original ASCII character.
+  
+---
+## 🔄 Decryption Flowchart
+
+```mermaid
+flowchart TD
+    Start([Start Decryption])
+    InputCiphertext[Input ciphertext list including prime as first element]
+    ExtractPrime(Extract prime number from ciphertext 0)
+    ExtractPrimeBits[Extract upper and lower 4 bits of prime]
+    ComputeRotations[Compute r_upper = upper % 3 + 1, r_lower = lower % 3 + 1]
+    InitPlaintext[Initialize empty plaintext character list]
+    ForEachByte[For each encrypted byte excluding first]
+    XORWithPrime[XOR byte with prime to reverse encryption]
+    SplitNibbles[Split XOR result into upper and lower 4-bit nibbles]
+    RotateNibbles[Rotate upper nibble right by r_upper, lower nibble right by r_lower]
+    CombineToASCII[Combine rotated nibbles into ASCII value]
+    ConvertToChar[Convert ASCII value to character]
+    AppendChar[Append character to plaintext list]
+    EndForEachByte[Repeat for next encrypted byte]
+    OutputPlaintext[Return joined plaintext string]
+    End([End Decryption])
+
+    Start --> InputCiphertext --> ExtractPrime --> ExtractPrimeBits --> ComputeRotations --> InitPlaintext
+    InitPlaintext --> ForEachByte
+    ForEachByte --> XORWithPrime --> SplitNibbles --> RotateNibbles --> CombineToASCII --> ConvertToChar --> AppendChar --> EndForEachByte
+    EndForEachByte -->|More bytes| ForEachByte
+    EndForEachByte -->|All done| OutputPlaintext --> End
+
+
+```
 
 ## 🧪 Examples with Test Cases
 
@@ -235,3 +290,4 @@ print(f"Decrypted: {decrypted}")
 
 
 ```
+
