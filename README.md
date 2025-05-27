@@ -149,6 +149,7 @@ Original Plaintext: `Sultan321`
 - `upper_p = 13`, `lower_p = 3`
 - `r_upper = 2`, `r_lower = 1`
 
+### Encryption Table
 | Char | ASCII | Upper | Lower | Rot. Upper | Rot. Lower | Combined | XOR with p | Encrypted |
 |------|-------|--------|--------|-------------|--------------|-----------|--------------|------------|
 | S | 83 | 5 | 3 | 1 | 6 | 22 | 193 | 193 |
@@ -162,7 +163,21 @@ Original Plaintext: `Sultan321`
 | 1 | 49 | 3 | 1 | 12 | 2 | 194 | 81 | 81 |
 
 **Ciphertext**: `[211, 193, 57, 69, 59, 89, 92, 77, 79, 81]`  
-**EncryptedText**: `5CphhrgSKT`
+
+### Decryption Table
+
+| Encrypted | Combined | Rot. Upper | Rot. Lower | Upper | Lower | ASCII | Char |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 193 | 22 | 1 | 6 | 5 | 3 | 83 | S |
+| 57 | 234 | 14 | 10 | 7 | 5 | 117 | u |
+| 69 | 150 | 9 | 6 | 6 | 12 | 108 | l |
+| 59 | 232 | 14 | 8 | 7 | 4 | 116 | t |
+| 89 | 146 | 9 | 2 | 6 | 1 | 97 | a |
+| 92 | 151 | 9 | 7 | 6 | 14 | 110 | n |
+| 77 | 198 | 12 | 6 | 3 | 3 | 51 | 3 |
+| 79 | 196 | 12 | 4 | 3 | 2 | 50 | 2 |
+| 81 | 194 | 12 | 2 | 3 | 1 | 49 | 1 |
+
 **Decrypted Text**: `Sultan321`
 
 ### 🔹 Example 2: Encrypting & Decrypting "Hello@332"
@@ -171,6 +186,8 @@ Original Plaintext: `Hello@332`
 - Random Prime `p`: 131
 - `upper_p = 8`, `lower_p = 3`
 - `r_upper = 2`, `r_lower = 1`
+
+### Encryption Table
 
 | Char | ASCII | Upper | Lower | Rot. Upper | Rot. Lower | Combined | XOR with p | Encrypted |
 |------|-------|--------|--------|-------------|--------------|-----------|--------------|------------|
@@ -185,9 +202,24 @@ Original Plaintext: `Hello@332`
 | 2 | 50 | 3 | 2 | 12 | 4 | 196 | 71 | 71 |
 
 **Ciphertext**: `[131, 147, 25, 21, 21, 20, 147, 69, 69, 71]`  
-**EncryptedText**: `xfgiimhHHL`
+
+### Decryption Table
+
+| Encrypted | Combined | Rot. Upper | Rot. Lower | Upper | Lower | ASCII | Char |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 147 | 16 | 1 | 0 | 4 | 8 | 72 | H |
+| 25 | 154 | 9 | 10 | 6 | 5 | 101 | e |
+| 21 | 150 | 9 | 6 | 6 | 12 | 108 | l |
+| 21 | 150 | 9 | 6 | 6 | 12 | 108 | l |
+| 20 | 151 | 9 | 7 | 6 | 15 | 111 | o |
+| 147 | 16 | 1 | 0 | 4 | 0 | 64 | @ |
+| 69 | 198 | 12 | 6 | 3 | 3 | 51 | 3 |
+| 69 | 198 | 12 | 6 | 3 | 3 | 51 | 3 |
+| 71 | 196 | 12 | 4 | 3 | 2 | 50 | 2 |
+
 **Decrypted Text**: `Hello@332`
 
+---
 ## ✅ Benefits of NibbleDance Cipher
 
 - 🪶 **Lightweight**: Operates on 4-bit nibbles; ideal for small devices.
