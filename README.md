@@ -6,15 +6,15 @@
   Hajee Mohammad Danesh Science and Technology University,Dinajpur-5200.
 </h3>
 <h3 align="center">
-<b></b>Project Name: CodeCraft-Smart Contest Analysis System<b></b>
+<b></b>Project Name: NibbleDance Cipher<b></b>
 </h3>
 
 <h3 align="center">
-  Course Title: Software Engineering
+  Course Title: Mathematical Analysis for Computer Science
 </h3>
 
 <h3 align="center">
-  Course Code: CSE 305
+  Course Code: CSE 361
 </h3>
 <br>
 <h1 align="center">Submitted By</h1>
