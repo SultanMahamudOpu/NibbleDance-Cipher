@@ -32,7 +32,7 @@
 ----
 # NibbleDance Cipher – A Novel Lightweight Cryptographic Algorithm
 
-## 📄 Table of Contents
+## Table of Contents
 - [Overview](#overview)
 - [Introduction](#introduction)
 - [Encryption Process](#encryption-process)
@@ -45,12 +45,12 @@
 - [References](#references)
 - [Source Code](#source-code)
 
-## 📘 Overview
+## Overview
 **NibbleDance Cipher** is a lightweight symmetric key cryptographic algorithm that operates on the nibbles (4-bit halves) of ASCII characters. It employs bit-level transformations such as circular rotations and bitwise XOR, along with a dynamically generated prime number key. The algorithm is designed for simplicity and efficiency, making it well-suited for resource-constrained systems or educational cryptographic applications.
 
 This cipher is named "NibbleDance" due to the way it rotates and shifts 4-bit nibbles, creating a "dance" of bits that enhances diffusion and complexity in the ciphertext.
 
-## ✨ Introduction
+## Introduction
 Cryptographic algorithms are essential for data privacy and secure communication. Traditional algorithms like AES and RSA are powerful but often heavy for lightweight applications. **NibbleDance Cipher** offers a novel and simple alternative for educational purposes, small devices, or custom protocols where lightweight encryption is required.
 
 This algorithm utilizes:
@@ -61,7 +61,7 @@ This algorithm utilizes:
 
 It ensures reversible and secure encryption with a compact transformation process.
 
-## 🔐 Encryption Process
+## Encryption Process
 Steps:
 1. Generate a random prime number `p` (2 ≤ p ≤ 250).
 2. Split `p` into upper and lower 4-bit nibbles.
@@ -76,7 +76,7 @@ Steps:
 5. Return ciphertext as a list of integers, prefixed with the key `p`.
 
 ---
-## 🔄 Encryption Flowchart
+## Encryption Flowchart
 
 ```mermaid
 flowchart TD
@@ -110,7 +110,7 @@ Steps:
    - Reconstruct original ASCII character.
   
 ---
-## 🔄 Decryption Flowchart
+## Decryption Flowchart
 
 ```mermaid
 flowchart TD
@@ -140,9 +140,9 @@ flowchart TD
 
 ```
 
-## 🧪 Examples with Test Cases
+## Examples with Test Cases
 
-### 🔹 Example 1: Encrypting & Decrypting "Sultan321"
+### Example 1: Encrypting & Decrypting "Sultan321"
 Original Plaintext: `Sultan321`
 
 - Random Prime `p`: 211
@@ -180,7 +180,7 @@ Original Plaintext: `Sultan321`
 
 **Decrypted Text**: `Sultan321`
 
-### 🔹 Example 2: Encrypting & Decrypting "Hello@332"
+### Example 2: Encrypting & Decrypting "Hello@332"
 Original Plaintext: `Hello@332`
 
 - Random Prime `p`: 131
@@ -220,22 +220,22 @@ Original Plaintext: `Hello@332`
 **Decrypted Text**: `Hello@332`
 
 ---
-## ✅ Benefits of NibbleDance Cipher
+## Benefits of NibbleDance Cipher
 
-- 🪶 **Lightweight**: Operates on 4-bit nibbles; ideal for small devices.
-- 🔑 **Dynamic Keys**: Uses randomly generated prime number for each session.
-- 🔁 **Reversible**: Perfect symmetry between encryption and decryption.
-- 🔒 **Obfuscation**: Combines rotations and XORs for strong confusion and diffusion.
+-  **Lightweight**: Operates on 4-bit nibbles; ideal for small devices.
+-  **Dynamic Keys**: Uses randomly generated prime number for each session.
+-  **Reversible**: Perfect symmetry between encryption and decryption.
+-  **Obfuscation**: Combines rotations and XORs for strong confusion and diffusion.
 
-## 🧾 Conclusion
+## Conclusion
 **NibbleDance Cipher** is a custom-designed, lightweight encryption scheme that demonstrates how prime numbers, nibble-wise operations, and logical bit manipulation can be combined to produce a secure and reversible cipher. It is ideal for educational purposes, embedded systems, and applications needing fast symmetric encryption.
 
-## 📚 References
+## References
 - Stallings, William. *Cryptography and Network Security: Principles and Practice*.
 - Wikipedia: [Bitwise Operation](https://en.wikipedia.org/wiki/Bitwise_operation)
 - Python Documentation: `random` module
 
-## 💻 Source Code
+## Source Code
 ```python
 import random
 import string 
