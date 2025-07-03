@@ -99,7 +99,7 @@ flowchart TD
 
 ```
 
-## 🔓 Decryption Process
+## Decryption Process
 Steps:
 1. Extract the prime key `p` from the first element.
 2. Recalculate `r_upper` and `r_lower` using the same method.
