@@ -30,7 +30,7 @@
 <br><br><br>
 
 ----
-# NibbleDance Cipher – A Novel Lightweight Cryptographic Algorithm
+# NibbleDance Cipher – A Pseudo Random Prime-Keyed Rotational Nibble-Based Encryption Algorithm
 
 ## Table of Contents
 - [Overview](#overview)
