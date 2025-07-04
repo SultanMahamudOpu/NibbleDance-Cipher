@@ -226,7 +226,23 @@ Original Plaintext: `Hello@332`
 -  **Dynamic Keys**: Uses randomly generated prime number for each session.
 -  **Reversible**: Perfect symmetry between encryption and decryption.
 -  **Obfuscation**: Combines rotations and XORs for strong confusion and diffusion.
+---
+# Table 1.1: NibbleDance Cipher vs Other Algorithms: Key Differences
 
+| **Feature**             | **NibbleDance Cipher**                                                                 | **Caesar Cipher**                    | **Vigenère Cipher**                      | **AES (Advanced Encryption Standard)**             |
+|-------------------------|-----------------------------------------------------------------------------------------|--------------------------------------|------------------------------------------|----------------------------------------------------|
+| **Type**                | Custom, symmetric, nibble-based                                                        | Classical, symmetric                 | Classical, polyalphabetic                | Modern, symmetric block cipher                     |
+| **Key Structure**       | Random prime number + derived nibble-based rotations                                   | Single shift value (integer)         | Keyword (string)                         | 128/192/256-bit key                                |
+| **Substitution Logic**  | Rotational nibble substitution using prime-derived rotation counts                     | Simple letter shift                  | Letter shift based on keyword            | Complex S-box substitution                         |
+| **Permutation**         | Yes (through bit/nibble reordering or transformation based on prime)                  | ❌                                     | ❌                                       | Implicit permutation in rounds                     |
+| **Modular Arithmetic**  | Core principle: nibble-wise modular operations using prime rotation values             | Addition mod 26                      | Addition mod 26                          | Finite field arithmetic (GF(2⁸))                   |
+| **Decryption Needs**    | Inverse rotations + recombination of original nibbles                                 | Reverse shift                        | Reverse keyword-based shift              | Reverse rounds using inverse S-box and keys        |
+| **Educational Purpose** | Designed for cryptographic learning and demonstrating pseudo-random transformations   | Historical only                      | Historical, basic cryptography           | Real-world industrial standard                     |
+| **Security Strength**   | Moderate (suitable for educational and demonstrative uses)                             | Very weak                            | Weak (easily broken)                     | Strong (global standard, widely adopted)           |
+| **Block-Based?**        | Yes (character-level processing via 4-bit nibbles)                                     | No                                   | No                                       | Yes (128-bit blocks)                               |
+| **Customizability**     | High (prime choice, rotation rules, nibble structure can be tuned)                     | Low                                  | Medium                                   | Low (fixed key and operation configuration)        |
+
+---
 ## Conclusion
 **NibbleDance Cipher** is a custom-designed, lightweight encryption scheme that demonstrates how prime numbers, nibble-wise operations, and logical bit manipulation can be combined to produce a secure and reversible cipher. It is ideal for educational purposes, embedded systems, and applications needing fast symmetric encryption.
 
