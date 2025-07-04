@@ -41,9 +41,11 @@
   - [Example 1: "Sultan321"](#example-1-sultan321)
   - [Example 2: "Hello@332"](#example-2-hello332)
 - [Benefits of NibbleDance Cipher](#benefits-of-nibbledance-cipher)
+- [Comparison Table](#conclusion)
 - [Conclusion](#conclusion)
 - [References](#references)
 - [Source Code](#source-code)
+  
 
 ## Overview
 **NibbleDance Cipher** is a lightweight symmetric key cryptographic algorithm that operates on the nibbles (4-bit halves) of ASCII characters. It employs bit-level transformations such as circular rotations and bitwise XOR, along with a dynamically generated prime number key. The algorithm is designed for simplicity and efficiency, making it well-suited for resource-constrained systems or educational cryptographic applications.
